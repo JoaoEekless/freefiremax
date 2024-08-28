@@ -1,9 +1,5 @@
 # Lista vazia para armazenar produtos
 produtos = []
-nome = ()
-preco = 0
-quantidade = 0
-
 
 # Função para mostrar linha 
 def mostra_linha():
@@ -75,4 +71,5 @@ def main():
         else:
             print('Opção inválida. Por favor, escolha uma opção válida.')
 
-if __name__ == "__mai
+if __name__ == "__main__":
+    main()
