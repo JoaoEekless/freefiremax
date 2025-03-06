@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Launcher</title>
+
+  <!-- Fonte do Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Link para o arquivo CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Título principal -->
+    <h1>Gerenciador de Downloads</h1>
+
+    <!-- Tela de Login -->
+    <div id="login-screen" class="screen">
+      <h1>Faça Login ou Cadastre-se</h1>
+      <div>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username">
+      </div>
+      <div>
+        <label for="password">Senha:</label>
+        <input type="password" id="password">
+      </div>
+      <div>
+        <button onclick="login()">Login</button>
+        <button onclick="showSignup()">Cadastrar</button>
+      </div>
+    </div>
+
+    <!-- Tela de Cadastro -->
+    <div id="signup-screen" class="screen" style="display: none;">
+      <h1>Cadastrar Novo Usuário</h1>
+      <div>
+        <label for="new-username">Usuário:</label>
+        <input type="text" id="new-username">
+      </div>
+      <div>
+        <label for="new-password">Senha:</label>
+        <input type="password" id="new-password">
+      </div>
+      <div>
+        <button onclick="signup()">Cadastrar</button>
+        <button onclick="showLogin()">Voltar para Login</button>
+      </div>
+    </div>
+
+    <!-- Tela Principal (após login) -->
+    <div id="main-screen" class="screen" style="display: none;">
+      <h1>Game Installer</h1>
+      <div>
+        <label for="category">Categoria:</label>
+        <select id="category" onchange="updateAppList()">
+          <option value="">Selecione uma categoria</option>
+          <option value="games">Jogos</option>
+          <option value="tools">Ferramentas</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="app-list">Aplicativo:</label>
+        <select id="app-list" onchange="showAppDescription()">
+          <option value="">Selecione um aplicativo</option>
+        </select>
+      </div>
+
+      <p id="app-description">Descrição: Selecione um app.</p>
+      <button onclick="downloadApp()">Instalar/Abrir</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
