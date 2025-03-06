@@ -49,10 +49,10 @@ function showMainScreen() {
 const apps = {
   games: {
     "Roblox": { description: "Plataforma de criação de jogos online.", url: "https://www.roblox.com/pt/download/client?os=win" },
-    "Point Blank": { description: "Cs da epoca da pedra", url: "https://pb.ongame.net/download/zepetto-downloader/" },
+    "Point Blank": { description: "É um videogame de tiro em primeira pessoa.", url: "https://pb.ongame.net/download/zepetto-downloader/" },
   },
   tools: {
-    "Discord": {description: "Whatsapp melhorado", url:"https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64"}
+    "Discord": {description: "É uma aplicação gratuita que foi projetado inicialmente para comunidades de jogos.", url:"https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64"}
   },
 };
 
