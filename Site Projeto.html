@@ -1,83 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GDload</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDload</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      
+      <section>
+        <a href="#" class="logo">
+          <img src="img/image0_0.jpg" alt="logo" />
+        </a>
 
-  <nav class="navbar">
-      <div class="logo">GDload</div>
-      <ul class="nav-links">
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Loja</a></li>
-          <li><a href="#">Comunidade</a></li>
-          <li><a href="#">Suporte</a></li>
-      </ul>
-  </nav>
+      
+        <nav class="navbar">
+          <a href="#">Início</a>
+          <a href="#home">Sobre nós</a>
+          <a href="#about">Comunidade</a>
+          <a href="#address">Suporte</a>
+        </nav>
 
-  <div class="container">
-    <h1>Gerenciador de Downloads</h1>
+        <div class="icons">
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/ios-filled/30/ffffff/home.png"
+            alt="home"
+          />
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/ios-glyphs/30/ffffff/group.png"
+            alt="group"
+          />
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/ios-glyphs/30/support.png"
+            alt="support"
+          />
+        </div>
+      </section>
+    </header>
+    
+    <div class="home-container">
+        <section id="#">
+          <div class="content">
+             <h3>Gerenciador de dowloads</h3>
+             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum culpa omnis consequuntur dicta dolor porro tenetur esse incidunt, voluptatem molestiae hic iusto quo. At iste vitae qui. Expedita, dicta quaerat.</p>
+             <a href="#" class="btn">Instale já</a>
+          </div>
 
-    <div id="login-screen" class="screen">
-      <h1>Faça Login ou Cadastre-se</h1>
-      <div>
-        <label for="username">Usuário:</label>
-        <input type="text" id="username">
+    <section class="home" id="home">
+         <h2 class="title">Sobre <span>Nós</span></h2>
+         <div class="row">
+             <div class="content">
+                  <h3> O que é nossa plataforma</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis natus eos doloremque similique ipsam vero debitis quia, quaerat facilis eligendi corrupti repellendus ab ullam necessitatibus dignissimos quos nisi, aperiam nihil?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illo nisi dolor fugit! Minus adipisci at quibusdam corporis aut dolores, ipsum numquam totam magnam, commodi, quasi ullam architecto voluptatibus velit.</p>
+                  <a href="#" class="btn">Saiba mais</a>
+             </div>
+        
+         </div>
+ 
+    </section>
+
+    <div class="container">
+      <h1>Gerenciador de Downloads</h1>
+
+      <div id="login-screen" class="screen">
+        <h1>Faça Login ou Cadastre-se</h1>
+        <div>
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" />
+        </div>
+        <div>
+          <label for="password">Senha:</label>
+          <input type="password" id="password" />
+        </div>
+        <div>
+          <button onclick="login()">Login</button>
+          <button onclick="showSignup()">Cadastrar</button>
+        </div>
       </div>
-      <div>
-        <label for="password">Senha:</label>
-        <input type="password" id="password">
+
+      <div id="signup-screen" class="screen" style="display: none">
+        <h1>Cadastrar Novo Usuário</h1>
+        <div>
+          <label for="new-username">Usuário:</label>
+          <input type="text" id="new-username" />
+        </div>
+        <div>
+          <label for="new-password">Senha:</label>
+          <input type="password" id="new-password" />
+        </div>
+        <div>
+          <button onclick="signup()">Cadastrar</button>
+          <button onclick="showLogin()">Voltar para Login</button>
+        </div>
       </div>
-      <div>
-        <button onclick="login()">Login</button>
-        <button onclick="showSignup()">Cadastrar</button>
+
+      <div id="main-screen" class="screen" style="display: none">
+        <h1>GDload</h1>
+        <div>
+          <label for="category">Categoria:</label>
+          <select id="category" onchange="updateAppList()">
+            <option value="">Selecione uma categoria</option>
+            <option value="games">Jogos</option>
+            <option value="tools">Aplicativos</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="app-list">Aplicativo:</label>
+          <select id="app-list" onchange="showAppDescription()">
+            <option value="">Selecione um aplicativo</option>
+          </select>
+        </div>
+
+        <p id="app-description">Descrição: Selecione um app.</p>
+        <button onclick="downloadApp()">Instalar/Abrir</button>
       </div>
     </div>
 
-    <div id="signup-screen" class="screen" style="display: none;">
-      <h1>Cadastrar Novo Usuário</h1>
-      <div>
-        <label for="new-username">Usuário:</label>
-        <input type="text" id="new-username">
-      </div>
-      <div>
-        <label for="new-password">Senha:</label>
-        <input type="password" id="new-password">
-      </div>
-      <div>
-        <button onclick="signup()">Cadastrar</button>
-        <button onclick="showLogin()">Voltar para Login</button>
-      </div>
-    </div>
-
-    <div id="main-screen" class="screen" style="display: none;">
-      <h1>GDload</h1>
-      <div>
-        <label for="category">Categoria:</label>
-        <select id="category" onchange="updateAppList()">
-          <option value="">Selecione uma categoria</option>
-          <option value="games">Jogos</option>
-          <option value="tools">Aplicativos</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="app-list">Aplicativo:</label>
-        <select id="app-list" onchange="showAppDescription()">
-          <option value="">Selecione um aplicativo</option>
-        </select>
-      </div>
-
-      <p id="app-description">Descrição: Selecione um app.</p>
-      <button onclick="downloadApp()">Instalar/Abrir</button>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
